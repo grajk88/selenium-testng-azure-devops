@@ -14,7 +14,7 @@ public class ZippopotamTests {
 
 		try {
 
-			given().when().get("http://zippopotam.us/us/90210").then().assertThat().statusCode(200);
+			given().when().get("http://zippopotam.us/us/90210").then().assertThat().statusCode(300);
 
 		} catch (Exception e) {
 			e.printStackTrace();
