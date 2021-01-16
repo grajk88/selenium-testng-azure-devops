@@ -37,6 +37,11 @@
 
 	</dependencies>
 
+	<properties>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+	</properties>
+
 	<build>
 		<plugins>
 
@@ -44,8 +49,14 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.0</version>
+				<configuration>
+					<suiteXmlFiles>
+						<!-- pass testng.xml files as argument from command line -->
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
+
 </project>

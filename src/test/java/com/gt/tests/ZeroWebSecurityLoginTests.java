@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.AssertJUnit;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -20,13 +21,24 @@ public class ZeroWebSecurityLoginTests {
 	WebDriver driver;
 
 	@BeforeMethod(alwaysRun = true)
-	public void launchBrowser() {
+	@Parameters({ "browser", "environment" })
+	public void launchBrowser(String browser, String environment) {
 
 		try {
+
+			System.out.println("+++++++++++++++++++++++++++++++++++++++++");
+
+			System.out.println("BROWSER: Executing Tests In " + browser);
+
+			System.out.println("ENVIRONMENT: Executing Tests In " + environment);
+
+			System.out.println("+++++++++++++++++++++++++++++++++++++++++");
 
 			WebDriverManager.chromedriver().setup();
 
 			driver = new ChromeDriver();
+
+			driver.get("http://zero.webappsecurity.com/");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -38,7 +50,6 @@ public class ZeroWebSecurityLoginTests {
 	public void loginTestOne() {
 		try {
 
-			driver.get("http://zero.webappsecurity.com/");
 			driver.findElement(By.id("signin_button")).click();
 			driver.findElement(By.id("user_login")).sendKeys("username");
 			driver.findElement(By.id("user_password")).sendKeys("password");
@@ -66,7 +77,6 @@ public class ZeroWebSecurityLoginTests {
 	public void loginTestTwo() {
 		try {
 
-			driver.get("http://zero.webappsecurity.com/");
 			driver.findElement(By.id("signin_button")).click();
 			driver.findElement(By.id("user_login")).sendKeys("username");
 			driver.findElement(By.id("user_password")).sendKeys("password");
@@ -88,7 +98,6 @@ public class ZeroWebSecurityLoginTests {
 	public void loginTestThree() {
 		try {
 
-			driver.get("http://zero.webappsecurity.com/");
 			driver.findElement(By.id("signin_button")).click();
 			driver.findElement(By.id("user_login")).sendKeys("username");
 			driver.findElement(By.id("user_password")).sendKeys("password");

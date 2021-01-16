@@ -1,11 +1,12 @@
 package com.gt.tests;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItem;
 
 import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
-import static org.hamcrest.Matchers.*;
 
 public class ZippopotamTests {
 
@@ -14,7 +15,7 @@ public class ZippopotamTests {
 
 		try {
 
-			given().when().get("http://zippopotam.us/us/90210").then().assertThat().statusCode(300);
+			given().when().get("http://zippopotam.us/us/90210").then().assertThat().statusCode(200);
 
 		} catch (Exception e) {
 			e.printStackTrace();
