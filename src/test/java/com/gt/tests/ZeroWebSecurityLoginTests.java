@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -55,7 +56,7 @@ public class ZeroWebSecurityLoginTests {
 			FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "/target/images/HomePage.jpg"));
 
 			System.out.println("Added Screenshot to : " + System.getProperty("user.dir") + "/target/images/HomePage.jpg");
-
+			
 			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]")).click();
 			driver.findElement(By.linkText("Logout")).click();
 
@@ -76,7 +77,7 @@ public class ZeroWebSecurityLoginTests {
 			driver.findElement(By.id("user_password")).sendKeys("password");
 			driver.findElement(By.id("user_password")).submit();
 
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 
 			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]")).click();
 			driver.findElement(By.linkText("Logout")).click();
