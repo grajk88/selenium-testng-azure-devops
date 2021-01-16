@@ -40,7 +40,7 @@ public class ZeroWebSecurityLoginTests {
 		}
 	}
 
-	@Test
+	@Test(groups = { "smoke" })
 	public void loginTestOne() {
 		try {
 
@@ -55,8 +55,9 @@ public class ZeroWebSecurityLoginTests {
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "/target/images/HomePage.jpg"));
 
-			System.out.println("Added Screenshot to : " + System.getProperty("user.dir") + "/target/images/HomePage.jpg");
-			
+			System.out
+					.println("Added Screenshot to : " + System.getProperty("user.dir") + "/target/images/HomePage.jpg");
+
 			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]")).click();
 			driver.findElement(By.linkText("Logout")).click();
 
@@ -67,7 +68,7 @@ public class ZeroWebSecurityLoginTests {
 
 	}
 
-	@Test
+	@Test(groups = { "regression" })
 	public void loginTestTwo() {
 		try {
 
@@ -89,7 +90,7 @@ public class ZeroWebSecurityLoginTests {
 
 	}
 
-	@Test
+	@Test(groups = { "regression" })
 	public void loginTestThree() {
 		try {
 
