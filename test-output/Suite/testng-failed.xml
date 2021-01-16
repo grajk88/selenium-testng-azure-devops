@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="Test(failed)">
+  <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
     <classes>
       <class name="com.gt.tests.ZeroWebSecurityLoginTests">
         <methods>
-          <include name="quitBrowser"/>
-          <include name="launchBrowser"/>
           <include name="loginTestOne"/>
         </methods>
       </class> <!-- com.gt.tests.ZeroWebSecurityLoginTests -->

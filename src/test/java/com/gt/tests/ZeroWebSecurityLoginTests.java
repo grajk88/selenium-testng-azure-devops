@@ -8,9 +8,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -19,19 +19,18 @@ public class ZeroWebSecurityLoginTests {
 
 	WebDriver driver;
 
-	@BeforeTest
+	@BeforeMethod(alwaysRun = true)
 	public void launchBrowser() {
 
 		try {
 
 			WebDriverManager.chromedriver().setup();
-			
 
 			driver = new ChromeDriver();
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.assertTrue(false);
+			AssertJUnit.assertTrue(false);
 		}
 	}
 
@@ -58,7 +57,7 @@ public class ZeroWebSecurityLoginTests {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.assertTrue(false);
+			AssertJUnit.assertTrue(false);
 		}
 
 	}
@@ -80,7 +79,7 @@ public class ZeroWebSecurityLoginTests {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.assertTrue(false);
+			AssertJUnit.assertTrue(false);
 		}
 
 	}
@@ -102,20 +101,21 @@ public class ZeroWebSecurityLoginTests {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.assertTrue(false);
+			AssertJUnit.assertTrue(false);
 		}
 
 	}
 
-	@AfterTest
+	@AfterMethod(alwaysRun = true)
 	public void quitBrowser() {
 		try {
 
+			System.out.println("Called AfterMethod");
 			driver.quit();
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.assertTrue(false);
+			AssertJUnit.assertTrue(false);
 		}
 	}
 
