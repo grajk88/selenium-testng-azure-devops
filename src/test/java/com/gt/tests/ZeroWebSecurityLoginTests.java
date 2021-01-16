@@ -72,6 +72,28 @@ public class ZeroWebSecurityLoginTests {
 		}
 
 	}
+	
+	@Test
+	public void loginTestThree() {
+		try {
+
+			driver.get("http://zero.webappsecurity.com/");
+			driver.findElement(By.id("signin_button")).click();
+			driver.findElement(By.id("user_login")).sendKeys("username");
+			driver.findElement(By.id("user_password")).sendKeys("password");
+			driver.findElement(By.id("user_password")).submit();
+
+			Thread.sleep(5000);
+
+			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]")).click();
+			driver.findElement(By.linkText("Logout")).click();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.assertTrue(false);
+		}
+
+	}
 
 	@AfterTest
 	public void quitBrowser() {
