@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="7" total="8" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-16T20:27:42 GMT" name="Suite" finished-at="2021-01-16T20:27:52 GMT" duration-ms="10524">
+  <suite started-at="2021-01-16T20:40:34 GMT" name="Suite" finished-at="2021-01-16T20:40:45 GMT" duration-ms="10511">
     <groups>
       <group name="smoke">
-        <method signature="ZeroWebSecurityLoginTests.loginTestOne()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@7690781]" name="loginTestOne" class="com.gt.tests.ZeroWebSecurityLoginTests"/>
+        <method signature="ZeroWebSecurityLoginTests.loginTestOne()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@272ed83b]" name="loginTestOne" class="com.gt.tests.ZeroWebSecurityLoginTests"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2021-01-16T20:27:42 GMT" name="Test" finished-at="2021-01-16T20:27:52 GMT" duration-ms="10524">
+    <test started-at="2021-01-16T20:40:34 GMT" name="Test" finished-at="2021-01-16T20:40:45 GMT" duration-ms="10511">
       <class name="com.gt.tests.ZeroWebSecurityLoginTests">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@7690781]" started-at="2021-01-16T20:27:42 GMT" name="launchBrowser" finished-at="2021-01-16T20:27:44 GMT" duration-ms="2089" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@272ed83b]" started-at="2021-01-16T20:40:34 GMT" name="launchBrowser" finished-at="2021-01-16T20:40:36 GMT" duration-ms="1747" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="loginTestOne()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@7690781]" started-at="2021-01-16T20:27:44 GMT" name="loginTestOne" finished-at="2021-01-16T20:27:52 GMT" duration-ms="8315" status="PASS">
+        <test-method signature="loginTestOne()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@272ed83b]" started-at="2021-01-16T20:40:36 GMT" name="loginTestOne" finished-at="2021-01-16T20:40:45 GMT" duration-ms="8646" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTestOne -->
-        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@7690781]" started-at="2021-01-16T20:27:52 GMT" name="quitBrowser" finished-at="2021-01-16T20:27:52 GMT" duration-ms="88" status="PASS">
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@272ed83b]" started-at="2021-01-16T20:40:45 GMT" name="quitBrowser" finished-at="2021-01-16T20:40:45 GMT" duration-ms="88" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
