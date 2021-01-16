@@ -1,9 +1,9 @@
 package com.gt.tests;
 
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -18,16 +18,12 @@ public class ZeroWebSecurityLoginTests {
 		try {
 
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
-
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless");
 			
-			driver = new ChromeDriver(options);
+			driver = new ChromeDriver();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@Test
@@ -36,7 +32,7 @@ public class ZeroWebSecurityLoginTests {
 
 			driver.get("http://zero.webappsecurity.com/");
 			driver.findElement(By.id("signin_button")).click();
-			driver.findElement(By.id("user_logi")).sendKeys("username");
+			driver.findElement(By.id("user_login")).sendKeys("username");
 			driver.findElement(By.id("user_password")).sendKeys("password");
 			driver.findElement(By.id("user_password")).submit();
 
