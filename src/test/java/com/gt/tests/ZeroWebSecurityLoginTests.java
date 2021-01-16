@@ -25,6 +25,7 @@ public class ZeroWebSecurityLoginTests {
 		try {
 
 			WebDriverManager.chromedriver().setup();
+			
 
 			driver = new ChromeDriver();
 
