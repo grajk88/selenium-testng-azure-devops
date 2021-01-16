@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-16T12:07:03 GMT" name="Default suite" finished-at="2021-01-16T12:07:12 GMT" duration-ms="9666">
+  <suite started-at="2021-01-16T12:09:04 GMT" name="Suite" finished-at="2021-01-16T12:09:14 GMT" duration-ms="9731">
     <groups>
     </groups>
-    <test started-at="2021-01-16T12:07:03 GMT" name="Default test" finished-at="2021-01-16T12:07:12 GMT" duration-ms="9666">
+    <test started-at="2021-01-16T12:09:04 GMT" name="Test" finished-at="2021-01-16T12:09:14 GMT" duration-ms="9731">
       <class name="com.gt.tests.ZeroWebSecurityLoginTests">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@6a6afff2]" started-at="2021-01-16T12:07:03 GMT" name="launchBrowser" finished-at="2021-01-16T12:07:04 GMT" duration-ms="1869" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@6a6afff2]" started-at="2021-01-16T12:09:04 GMT" name="launchBrowser" finished-at="2021-01-16T12:09:06 GMT" duration-ms="1834" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="loginTest()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@6a6afff2]" started-at="2021-01-16T12:07:05 GMT" name="loginTest" finished-at="2021-01-16T12:07:12 GMT" duration-ms="7684" status="PASS">
+        <test-method signature="loginTest()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@6a6afff2]" started-at="2021-01-16T12:09:06 GMT" name="loginTest" finished-at="2021-01-16T12:09:14 GMT" duration-ms="7783" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@6a6afff2]" started-at="2021-01-16T12:07:12 GMT" name="quitBrowser" finished-at="2021-01-16T12:07:12 GMT" duration-ms="86" status="PASS">
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.gt.tests.ZeroWebSecurityLoginTests@6a6afff2]" started-at="2021-01-16T12:09:14 GMT" name="quitBrowser" finished-at="2021-01-16T12:09:14 GMT" duration-ms="89" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
       </class> <!-- com.gt.tests.ZeroWebSecurityLoginTests -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

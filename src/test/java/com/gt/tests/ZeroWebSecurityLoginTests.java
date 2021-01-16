@@ -32,7 +32,7 @@ public class ZeroWebSecurityLoginTests {
 		try {
 
 			driver.get("http://zero.webappsecurity.com/");
-			driver.findElement(By.id("signin_button")).click();
+			driver.findElement(By.id("signin_butto")).click();
 			driver.findElement(By.id("user_login")).sendKeys("username");
 			driver.findElement(By.id("user_password")).sendKeys("password");
 			driver.findElement(By.id("user_password")).submit();
