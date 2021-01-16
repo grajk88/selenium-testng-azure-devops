@@ -1,12 +1,13 @@
 package com.gt.tests;
 
-import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ZeroWebSecurityLoginTests {
 
@@ -16,9 +17,9 @@ public class ZeroWebSecurityLoginTests {
 	public void launchBrowser() {
 
 		try {
-
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
 			
+			WebDriverManager.chromedriver().setup();
+
 			driver = new ChromeDriver();
 
 		} catch (Exception e) {
