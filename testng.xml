@@ -2,14 +2,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<test name="Test">
-	
-	    <parameter name="browser" value=""/>
-	    <parameter name="environment" value=""/>
-	
 
-		<classes>
-			<class name="com.gt.tests.ZeroWebSecurityLoginTests" />
-			<class name="com.gt.tests.ZippopotamTests" />
-		</classes>
+		<parameter name="browser" value="" />
+		<parameter name="environment" value="" />
+
+		<packages>
+			<package name="com.gt.tests" />
+		</packages> <!-- Packages --> 
+		
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
