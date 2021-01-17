@@ -26,13 +26,13 @@ public class ZeroWebSecurityLoginTests {
 
 		try {
 
-			System.out.println("+++++++++++++++++++++++++++++++++++++++++");
+			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 
 			System.out.println("BROWSER: " + browser.toUpperCase().toString());
 
 			System.out.println("ENVIRONMENT: " + environment.toUpperCase().toString());
 
-			System.out.println("+++++++++++++++++++++++++++++++++++++++++");
+			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 
 			WebDriverManager.chromedriver().setup();
 
