@@ -28,9 +28,9 @@ public class ZeroWebSecurityLoginTests {
 
 			System.out.println("+++++++++++++++++++++++++++++++++++++++++");
 
-			System.out.println("BROWSER: Executing Tests In " + browser);
+			System.out.println("BROWSER: " + browser.toUpperCase().toString());
 
-			System.out.println("ENVIRONMENT: Executing Tests In " + environment);
+			System.out.println("ENVIRONMENT: " + environment.toUpperCase().toString());
 
 			System.out.println("+++++++++++++++++++++++++++++++++++++++++");
 
