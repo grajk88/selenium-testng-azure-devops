@@ -8,19 +8,45 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.http.ContentType;
 
 public class ZippopotamTests {
 
-	@Test(groups= {"apiTest"})
+	ExtentReports extent;
+
+	@BeforeClass
+	public void setuo() {
+		
+		System.out.println("Before Class");
+		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(
+				System.getProperty("user.dir") + "//reports//Extent_Report.html");
+		extent = new ExtentReports();
+		extent.attachReporter(htmlReporter);
+
+	}
+
+	@Test(groups = { "apiTest" })
 	public void statusCodeTest() {
 
 		try {
 
+			ExtentTest test = extent.createTest("MyFirstTest");
+
 			given().when().get("http://zippopotam.us/us/90210").then().assertThat().statusCode(200);
+
+			test.log(Status.INFO, "This step shows usage of log(status, details)");
+
+			test.pass("details");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -28,7 +54,7 @@ public class ZippopotamTests {
 
 	}
 
-	@Test(groups= {"apiTest"})
+	@Test(groups = { "apiTest" })
 	public void contentTypeTest() {
 
 		try {
@@ -46,7 +72,7 @@ public class ZippopotamTests {
 
 	}
 
-	@Test(groups= {"apiTest"})
+	@Test(groups = { "apiTest" })
 	public void loggingTest() {
 
 		try {
@@ -59,7 +85,7 @@ public class ZippopotamTests {
 
 	}
 
-	@Test(groups= {"apiTest"})
+	@Test(groups = { "apiTest" })
 	public void validateBodyTest() {
 
 		// Validate a value from an array - places[0]
@@ -75,7 +101,7 @@ public class ZippopotamTests {
 
 	}
 
-	@Test(groups= {"apiTest"})
+	@Test(groups = { "apiTest" })
 	public void validateValueArrayTest() {
 
 		// Validate a value from an array - places
@@ -90,19 +116,26 @@ public class ZippopotamTests {
 		}
 
 	}
-	
+
 	@Test
 	public void incognitoTest() {
-		
+
 		WebDriverManager.chromedriver().setup();
 
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        WebDriver driver = new ChromeDriver(capabilities);
-        driver.get("https://chercher.tech");
-        System.out.println(driver.getTitle());
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--incognito");
+		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+		WebDriver driver = new ChromeDriver(capabilities);
+		driver.get("https://chercher.tech");
+		System.out.println(driver.getTitle());
+	}
+
+	@AfterClass
+	public void tearDown() {
+		System.out.println("After tear Down");
+		extent.flush();
+
 	}
 
 }

@@ -2,15 +2,26 @@
 <testng-results skipped="0" failed="0" ignored="5" total="6" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2948" started-at="2021-01-21T08:53:15 GMT" finished-at="2021-01-21T08:53:18 GMT">
+  <suite name="Default suite" duration-ms="1787" started-at="2021-01-27T22:34:37 GMT" finished-at="2021-01-27T22:34:38 GMT">
     <groups>
+      <group name="apiTest">
+        <method signature="ZippopotamTests.statusCodeTest()[pri:0, instance:com.gt.tests.ZippopotamTests@bd8db5a]" name="statusCodeTest" class="com.gt.tests.ZippopotamTests"/>
+      </group> <!-- apiTest -->
     </groups>
-    <test name="Default test" duration-ms="2948" started-at="2021-01-21T08:53:15 GMT" finished-at="2021-01-21T08:53:18 GMT">
+    <test name="Default test" duration-ms="1787" started-at="2021-01-27T22:34:37 GMT" finished-at="2021-01-27T22:34:38 GMT">
       <class name="com.gt.tests.ZippopotamTests">
-        <test-method status="PASS" signature="incognitoTest()[pri:0, instance:com.gt.tests.ZippopotamTests@1877ab81]" name="incognitoTest" duration-ms="2916" started-at="2021-01-21T08:53:15 GMT" finished-at="2021-01-21T08:53:18 GMT">
+        <test-method status="PASS" signature="setuo()[pri:0, instance:com.gt.tests.ZippopotamTests@bd8db5a]" name="setuo" is-config="true" duration-ms="91" started-at="2021-01-27T22:34:37 GMT" finished-at="2021-01-27T22:34:37 GMT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- incognitoTest -->
+        </test-method> <!-- setuo -->
+        <test-method status="PASS" signature="statusCodeTest()[pri:0, instance:com.gt.tests.ZippopotamTests@bd8db5a]" name="statusCodeTest" duration-ms="1455" started-at="2021-01-27T22:34:37 GMT" finished-at="2021-01-27T22:34:38 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- statusCodeTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.gt.tests.ZippopotamTests@bd8db5a]" name="tearDown" is-config="true" duration-ms="214" started-at="2021-01-27T22:34:38 GMT" finished-at="2021-01-27T22:34:38 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- com.gt.tests.ZippopotamTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
