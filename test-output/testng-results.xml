@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="5" total="6" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1787" started-at="2021-01-27T22:34:37 GMT" finished-at="2021-01-27T22:34:38 GMT">
+  <suite name="Default suite" duration-ms="3840" started-at="2021-01-28T06:52:49 GMT" finished-at="2021-01-28T06:52:53 GMT">
     <groups>
       <group name="apiTest">
-        <method signature="ZippopotamTests.statusCodeTest()[pri:0, instance:com.gt.tests.ZippopotamTests@bd8db5a]" name="statusCodeTest" class="com.gt.tests.ZippopotamTests"/>
+        <method signature="ZippopotamTests.contentTypeTest()[pri:0, instance:com.gt.tests.ZippopotamTests@3043fe0e]" name="contentTypeTest" class="com.gt.tests.ZippopotamTests"/>
+        <method signature="ZippopotamTests.loggingTest()[pri:0, instance:com.gt.tests.ZippopotamTests@3043fe0e]" name="loggingTest" class="com.gt.tests.ZippopotamTests"/>
+        <method signature="ZippopotamTests.statusCodeTest()[pri:0, instance:com.gt.tests.ZippopotamTests@3043fe0e]" name="statusCodeTest" class="com.gt.tests.ZippopotamTests"/>
+        <method signature="ZippopotamTests.validateBodyTest()[pri:0, instance:com.gt.tests.ZippopotamTests@3043fe0e]" name="validateBodyTest" class="com.gt.tests.ZippopotamTests"/>
+        <method signature="ZippopotamTests.validateValueArrayTest()[pri:0, instance:com.gt.tests.ZippopotamTests@3043fe0e]" name="validateValueArrayTest" class="com.gt.tests.ZippopotamTests"/>
       </group> <!-- apiTest -->
     </groups>
-    <test name="Default test" duration-ms="1787" started-at="2021-01-27T22:34:37 GMT" finished-at="2021-01-27T22:34:38 GMT">
+    <test name="Default test" duration-ms="3840" started-at="2021-01-28T06:52:49 GMT" finished-at="2021-01-28T06:52:53 GMT">
       <class name="com.gt.tests.ZippopotamTests">
-        <test-method status="PASS" signature="setuo()[pri:0, instance:com.gt.tests.ZippopotamTests@bd8db5a]" name="setuo" is-config="true" duration-ms="91" started-at="2021-01-27T22:34:37 GMT" finished-at="2021-01-27T22:34:37 GMT">
+        <test-method status="PASS" signature="setuo()[pri:0, instance:com.gt.tests.ZippopotamTests@3043fe0e]" name="setuo" is-config="true" duration-ms="108" started-at="2021-01-28T06:52:49 GMT" finished-at="2021-01-28T06:52:49 GMT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setuo -->
-        <test-method status="PASS" signature="statusCodeTest()[pri:0, instance:com.gt.tests.ZippopotamTests@bd8db5a]" name="statusCodeTest" duration-ms="1455" started-at="2021-01-27T22:34:37 GMT" finished-at="2021-01-27T22:34:38 GMT">
+        <test-method status="PASS" signature="contentTypeTest()[pri:0, instance:com.gt.tests.ZippopotamTests@3043fe0e]" name="contentTypeTest" duration-ms="1900" started-at="2021-01-28T06:52:49 GMT" finished-at="2021-01-28T06:52:51 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- contentTypeTest -->
+        <test-method status="PASS" signature="loggingTest()[pri:0, instance:com.gt.tests.ZippopotamTests@3043fe0e]" name="loggingTest" duration-ms="287" started-at="2021-01-28T06:52:51 GMT" finished-at="2021-01-28T06:52:51 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loggingTest -->
+        <test-method status="PASS" signature="statusCodeTest()[pri:0, instance:com.gt.tests.ZippopotamTests@3043fe0e]" name="statusCodeTest" duration-ms="223" started-at="2021-01-28T06:52:51 GMT" finished-at="2021-01-28T06:52:51 GMT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- statusCodeTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.gt.tests.ZippopotamTests@bd8db5a]" name="tearDown" is-config="true" duration-ms="214" started-at="2021-01-27T22:34:38 GMT" finished-at="2021-01-27T22:34:38 GMT">
+        <test-method status="PASS" signature="validateBodyTest()[pri:0, instance:com.gt.tests.ZippopotamTests@3043fe0e]" name="validateBodyTest" duration-ms="777" started-at="2021-01-28T06:52:51 GMT" finished-at="2021-01-28T06:52:52 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateBodyTest -->
+        <test-method status="PASS" signature="validateValueArrayTest()[pri:0, instance:com.gt.tests.ZippopotamTests@3043fe0e]" name="validateValueArrayTest" duration-ms="225" started-at="2021-01-28T06:52:52 GMT" finished-at="2021-01-28T06:52:52 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateValueArrayTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.gt.tests.ZippopotamTests@3043fe0e]" name="tearDown" is-config="true" duration-ms="280" started-at="2021-01-28T06:52:52 GMT" finished-at="2021-01-28T06:52:53 GMT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -23,16 +23,15 @@ import io.restassured.http.ContentType;
 public class ZippopotamTests {
 
 	ExtentReports extent;
+	ExtentTest test;
+	ExtentHtmlReporter htmlReporter;
 
 	@BeforeClass
 	public void setuo() {
-		
 		System.out.println("Before Class");
-		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(
-				System.getProperty("user.dir") + "//reports//Extent_Report.html");
+		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "//reports//Extent_Report.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
-
 	}
 
 	@Test(groups = { "apiTest" })
@@ -40,13 +39,11 @@ public class ZippopotamTests {
 
 		try {
 
-			ExtentTest test = extent.createTest("MyFirstTest");
+			test = extent.createTest("statusCodeTest");
 
 			given().when().get("http://zippopotam.us/us/90210").then().assertThat().statusCode(200);
 
-			test.log(Status.INFO, "This step shows usage of log(status, details)");
-
-			test.pass("details");
+			test.log(Status.INFO, "statusCodeTest Passed");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -58,6 +55,8 @@ public class ZippopotamTests {
 	public void contentTypeTest() {
 
 		try {
+			
+			test = extent.createTest("contentTypeTest");
 
 			// Enumeration
 			given().when().get("http://zippopotam.us/us/{zip}", 90210).then().assertThat()
@@ -65,6 +64,8 @@ public class ZippopotamTests {
 
 			// With value
 			given().when().get("http://zippopotam.us/us/90210").then().assertThat().contentType("application/json");
+
+			test.log(Status.INFO, "contentTypeTest Passed");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -76,8 +77,12 @@ public class ZippopotamTests {
 	public void loggingTest() {
 
 		try {
+			test = extent.createTest("loggingTest");
+
 
 			given().log().all().when().get("http://zippopotam.us/us/90210").then().log().body();
+
+			test.log(Status.INFO, "loggingTest Passed");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -91,9 +96,13 @@ public class ZippopotamTests {
 		// Validate a value from an array - places[0]
 
 		try {
+			test = extent.createTest("validateBodyTest");
+
 
 			given().when().get("http://zippopotam.us/us/90210").then().assertThat().body("places[0].'latitude'",
 					equalTo("34.0901"));
+
+			test.log(Status.INFO, "validateBodyTest Passed");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -107,9 +116,13 @@ public class ZippopotamTests {
 		// Validate a value from an array - places
 
 		try {
+			test = extent.createTest("validateValueArrayTest");
+
 
 			given().when().get("http://zippopotam.us/us/90210").then().assertThat().body("places.'latitude'",
 					hasItem("34.0901"));
+
+			test.log(Status.INFO, "validateValueArrayTest Passed");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -117,7 +130,7 @@ public class ZippopotamTests {
 
 	}
 
-	@Test
+
 	public void incognitoTest() {
 
 		WebDriverManager.chromedriver().setup();
