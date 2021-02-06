@@ -102,7 +102,7 @@ public class ZeroWebSecurityPayments {
 
 	}
 
-	@AfterMethod(alwaysRun = true)
+	@AfterMethod()
 	public void quitBrowser() {
 		try {
 

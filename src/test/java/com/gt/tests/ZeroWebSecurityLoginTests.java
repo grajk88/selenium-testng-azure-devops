@@ -106,7 +106,7 @@ public class ZeroWebSecurityLoginTests {
 
 	}
 
-	@AfterTest(alwaysRun = true)
+	@AfterTest()
 	public void quitBrowser() {
 		try {
 
