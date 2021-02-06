@@ -9,9 +9,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.AssertJUnit;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -38,7 +37,10 @@ public class ZeroWebSecurityLoginTests {
 
 			WebDriverManager.chromedriver().setup();
 
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("ignore-certificate-errors");
+
+			driver = new ChromeDriver(options);
 
 			driver.get("http://zero.webappsecurity.com/");
 
@@ -65,9 +67,6 @@ public class ZeroWebSecurityLoginTests {
 			System.out
 					.println("Added Screenshot to : " + System.getProperty("user.dir") + "/target/images/HomePage.jpg");
 
-			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]")).click();
-			driver.findElement(By.linkText("Logout")).click();
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			AssertJUnit.assertTrue(false);
@@ -83,11 +82,6 @@ public class ZeroWebSecurityLoginTests {
 			driver.findElement(By.id("user_login")).sendKeys("username");
 			driver.findElement(By.id("user_password")).sendKeys("password");
 			driver.findElement(By.id("user_password")).submit();
-
-			Thread.sleep(3000);
-
-			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]")).click();
-			driver.findElement(By.linkText("Logout")).click();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -105,21 +99,14 @@ public class ZeroWebSecurityLoginTests {
 			driver.findElement(By.id("user_password")).sendKeys("password");
 			driver.findElement(By.id("user_password")).submit();
 
-			Thread.sleep(5000);
-
-			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]")).click();
-			driver.findElement(By.linkText("Logout")).click();
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			AssertJUnit.assertTrue(false);
 		}
 
 	}
-	
-	
 
-	@AfterMethod(alwaysRun = true)
+	@AfterTest(alwaysRun = true)
 	public void quitBrowser() {
 		try {
 

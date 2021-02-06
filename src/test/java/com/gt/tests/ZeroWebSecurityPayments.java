@@ -63,9 +63,6 @@ public class ZeroWebSecurityPayments {
 			System.out
 					.println("Added Screenshot to : " + System.getProperty("user.dir") + "/target/images/HomePage.jpg");
 
-			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]")).click();
-			driver.findElement(By.linkText("Logout")).click();
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			AssertJUnit.assertTrue(false);
@@ -82,11 +79,6 @@ public class ZeroWebSecurityPayments {
 			driver.findElement(By.id("user_password")).sendKeys("password");
 			driver.findElement(By.id("user_password")).submit();
 
-			Thread.sleep(3000);
-
-			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]")).click();
-			driver.findElement(By.linkText("Logout")).click();
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			AssertJUnit.assertTrue(false);
@@ -102,11 +94,6 @@ public class ZeroWebSecurityPayments {
 			driver.findElement(By.id("user_login")).sendKeys("username");
 			driver.findElement(By.id("user_password")).sendKeys("password");
 			driver.findElement(By.id("user_password")).submit();
-
-			Thread.sleep(5000);
-
-			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]")).click();
-			driver.findElement(By.linkText("Logout")).click();
 
 		} catch (Exception e) {
 			e.printStackTrace();

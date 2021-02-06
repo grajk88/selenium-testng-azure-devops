@@ -6,8 +6,8 @@
       <class name="com.gt.tests.ZeroWebSecurityLoginTests">
         <methods>
           <include name="quitBrowser"/>
-          <include name="incognitoTest"/>
           <include name="launchBrowser"/>
+          <include name="loginTestOne"/>
         </methods>
       </class> <!-- com.gt.tests.ZeroWebSecurityLoginTests -->
     </classes>
