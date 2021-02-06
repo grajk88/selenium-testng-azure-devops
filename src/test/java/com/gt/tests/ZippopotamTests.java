@@ -116,7 +116,7 @@ public class ZippopotamTests {
 
 			test.log(Status.INFO, "validateValueArrayTest Passed");
 			
-			System.out.println("This is a demo for #seleniumsummit2021");
+			System.out.println("Demo for Selenium Summit 2021");
 
 		} catch (Exception e) {
 			e.printStackTrace();
