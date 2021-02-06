@@ -26,7 +26,7 @@ public class ZippopotamTests {
 	ExtentTest test;
 	ExtentHtmlReporter htmlReporter;
 
-	
+	@BeforeClass
 	public void setuo() {
 		System.out.println("Before Class");
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "//reports//Extent_Report.html");
@@ -39,11 +39,11 @@ public class ZippopotamTests {
 
 		try {
 
-			// test = extent.createTest("statusCodeTest");
+			test = extent.createTest("statusCodeTest");
 
 			given().when().get("http://zippopotam.us/us/90210").then().assertThat().statusCode(200);
 
-			// test.log(Status.INFO, "statusCodeTest Passed");
+			test.log(Status.INFO, "statusCodeTest Passed");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -55,8 +55,8 @@ public class ZippopotamTests {
 	public void contentTypeTest() {
 
 		try {
-			
-			// test = extent.createTest("contentTypeTest");
+
+			test = extent.createTest("contentTypeTest");
 
 			// Enumeration
 			given().when().get("http://zippopotam.us/us/{zip}", 90210).then().assertThat()
@@ -65,7 +65,7 @@ public class ZippopotamTests {
 			// With value
 			given().when().get("http://zippopotam.us/us/90210").then().assertThat().contentType("application/json");
 
-			// test.log(Status.INFO, "contentTypeTest Passed");
+			test.log(Status.INFO, "contentTypeTest Passed");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -77,12 +77,11 @@ public class ZippopotamTests {
 	public void loggingTest() {
 
 		try {
-			// test = extent.createTest("loggingTest");
-
+			test = extent.createTest("loggingTest");
 
 			given().log().all().when().get("http://zippopotam.us/us/90210").then().log().body();
 
-			// test.log(Status.INFO, "loggingTest Passed");
+			test.log(Status.INFO, "loggingTest Passed");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -96,13 +95,12 @@ public class ZippopotamTests {
 		// Validate a value from an array - places[0]
 
 		try {
-			// test = extent.createTest("validateBodyTest");
-
+			test = extent.createTest("validateBodyTest");
 
 			given().when().get("http://zippopotam.us/us/90210").then().assertThat().body("places[0].'latitude'",
 					equalTo("34.0901"));
 
-			// test.log(Status.INFO, "validateBodyTest Passed");
+			test.log(Status.INFO, "validateBodyTest Passed");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -116,21 +114,20 @@ public class ZippopotamTests {
 		// Validate a value from an array - places
 
 		try {
-			// test = extent.createTest("validateValueArrayTest");
-
+			test = extent.createTest("validateValueArrayTest");
 
 			given().when().get("http://zippopotam.us/us/90210").then().assertThat().body("places.'latitude'",
 					hasItem("34.0901"));
 
-			// test.log(Status.INFO, "validateValueArrayTest Passed");
+			test.log(Status.INFO, "validateValueArrayTest Passed");
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 	}
-	
-	
+
+	@AfterClass
 	public void tearDown() {
 		System.out.println("After tear Down");
 		extent.flush();
