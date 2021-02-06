@@ -115,10 +115,13 @@ public class ZippopotamTests {
 					hasItem("34.0901"));
 
 			test.log(Status.INFO, "validateValueArrayTest Passed");
+			
+			test.log(Status.INFO, "Demo for SeleniumSummit2021");
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 
 	}
 
