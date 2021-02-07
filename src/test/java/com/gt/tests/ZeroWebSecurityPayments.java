@@ -1,11 +1,6 @@
 package com.gt.tests;
 
-import java.io.File;
-
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,8 +9,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ZeroWebSecurityPayments {
 
@@ -43,9 +36,8 @@ public class ZeroWebSecurityPayments {
 			options.setAcceptInsecureCerts(true);
 			// options.addArguments("--incognito");
 			options.setHeadless(true);
-
+			
 			driver = new ChromeDriver(options);
-
 			driver.get("http://zero.webappsecurity.com/");
 
 		} catch (Exception e) {
@@ -62,17 +54,7 @@ public class ZeroWebSecurityPayments {
 			driver.findElement(By.id("user_login")).sendKeys("username");
 			driver.findElement(By.id("user_password")).sendKeys("password");
 			driver.findElement(By.id("user_password")).submit();
-
-			Thread.sleep(5000);
-
-			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "/target/images/HomePage.jpg"));
-
-			System.out
-					.println("Added Screenshot to : " + System.getProperty("user.dir") + "/target/images/HomePage.jpg");
-
 			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]/a")).click();
-
 			driver.findElement(By.id("logout_link")).click();
 
 		} catch (Exception e) {
@@ -90,6 +72,8 @@ public class ZeroWebSecurityPayments {
 			driver.findElement(By.id("user_login")).sendKeys("username");
 			driver.findElement(By.id("user_password")).sendKeys("password");
 			driver.findElement(By.id("user_password")).submit();
+			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]/a")).click();
+			driver.findElement(By.id("logout_link")).click();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -106,6 +90,8 @@ public class ZeroWebSecurityPayments {
 			driver.findElement(By.id("user_login")).sendKeys("username");
 			driver.findElement(By.id("user_password")).sendKeys("password");
 			driver.findElement(By.id("user_password")).submit();
+			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]/a")).click();
+			driver.findElement(By.id("logout_link")).click();
 
 		} catch (Exception e) {
 			e.printStackTrace();
