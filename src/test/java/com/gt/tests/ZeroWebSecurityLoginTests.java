@@ -15,8 +15,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class ZeroWebSecurityLoginTests {
 
 	WebDriver driver;
@@ -35,10 +33,22 @@ public class ZeroWebSecurityLoginTests {
 
 			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 
-			WebDriverManager.chromedriver().setup();
+			// WebDriverManager.chromedriver().setup();
+
+			// ChromeOptions options = new ChromeOptions();
+			// options.addArguments("ignore-certificate-errors");
+			// options.setAcceptInsecureCerts(true);
+
+			System.out.println("Setting SSL Certificate");
+
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
 
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("ignore-certificate-errors");
+			options.addArguments("--test-type");
+			options.setAcceptInsecureCerts(true);
+			// options.addArguments("--incognito");
+			options.setHeadless(true);
 
 			driver = new ChromeDriver(options);
 
@@ -50,7 +60,7 @@ public class ZeroWebSecurityLoginTests {
 		}
 	}
 
-	@Test(groups = { "smoke" })
+	@Test(groups = { "smoke", "regression" })
 	public void loginTestOne() {
 		try {
 
@@ -59,6 +69,10 @@ public class ZeroWebSecurityLoginTests {
 			driver.findElement(By.id("user_password")).sendKeys("password");
 			driver.findElement(By.id("user_password")).submit();
 
+			// driver.findElement(By.id("details-button")).click();
+
+			// driver.findElement(By.id("proceed-link")).click();
+
 			Thread.sleep(5000);
 
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -66,6 +80,10 @@ public class ZeroWebSecurityLoginTests {
 
 			System.out
 					.println("Added Screenshot to : " + System.getProperty("user.dir") + "/target/images/HomePage.jpg");
+
+			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]/a")).click();
+
+			driver.findElement(By.id("logout_link")).click();
 
 		} catch (Exception e) {
 			e.printStackTrace();

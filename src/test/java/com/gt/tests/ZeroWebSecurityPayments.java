@@ -8,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.AssertJUnit;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -34,9 +35,16 @@ public class ZeroWebSecurityPayments {
 
 			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 
-			WebDriverManager.chromedriver().setup();
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
 
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("ignore-certificate-errors");
+			options.addArguments("--test-type");
+			options.setAcceptInsecureCerts(true);
+			// options.addArguments("--incognito");
+			options.setHeadless(true);
+
+			driver = new ChromeDriver(options);
 
 			driver.get("http://zero.webappsecurity.com/");
 
@@ -46,7 +54,7 @@ public class ZeroWebSecurityPayments {
 		}
 	}
 
-	@Test(groups = { "smoke" })
+	@Test(groups = { "smoke", "regression" })
 	public void loginTestOne() {
 		try {
 
@@ -62,6 +70,10 @@ public class ZeroWebSecurityPayments {
 
 			System.out
 					.println("Added Screenshot to : " + System.getProperty("user.dir") + "/target/images/HomePage.jpg");
+
+			driver.findElement(By.xpath("//*[@id=\"settingsBox\"]/ul/li[3]/a")).click();
+
+			driver.findElement(By.id("logout_link")).click();
 
 		} catch (Exception e) {
 			e.printStackTrace();
