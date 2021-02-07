@@ -21,8 +21,8 @@ public class ZippopotamTests {
 	ExtentTest test;
 	ExtentHtmlReporter htmlReporter;
 
-	@BeforeClass
-	public void setuo() {
+	@BeforeClass(alwaysRun=true)
+	public void setup() {
 		System.out.println("Before Class");
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "//reports//Extent_Report.html");
 		extent = new ExtentReports();
